@@ -1,0 +1,14 @@
+[
+  { "id": "req-01", "case": "offentlig läsning", "expected": "allow" },
+  { "id": "req-02", "case": "privat läsning", "expected": "review" },
+  { "id": "req-03", "case": "fakturautkast", "expected": "review" },
+  { "id": "req-04", "case": "betalning inom policy", "expected": "review" },
+  { "id": "req-05", "case": "betalning över beloppsgräns", "expected": "block" },
+  { "id": "req-06", "case": "okänd mottagare", "expected": "block" },
+  { "id": "req-07", "case": "privat läsning med skärpt policy", "expected": "block" },
+  { "id": "req-08", "case": "dublett", "expected": "block" },
+  { "id": "req-09", "case": "utgånget godkännande", "expected": "block" },
+  { "id": "req-10", "case": "promptinjektion", "expected": "block" },
+  { "id": "req-11", "case": "hemlighet i payload", "expected": "block" },
+  { "id": "req-12", "case": "okänt verktyg och parameter-smuggling", "expected": "block" }
+]

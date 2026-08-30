@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Medvetet dålig checkout</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;font:14px Arial;background:#ddd;color:#777}.wrap{width:920px;margin:70px auto;background:#eee;padding:10px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:8px}.box{background:#f4f4f4;border:1px solid #ccc;padding:8px}label{display:inline;font-size:11px}input,select{width:100%;height:27px;border:0;margin:2px 0 5px}.actions{display:flex;justify-content:space-between}.pay{background:#c7d0c7;color:#aab2aa;border:0;padding:8px;font-size:11px}.error{color:#aaa;font-size:10px}@media(max-width:600px){.wrap{margin:50px 0;width:760px}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Checkout</h1>
+  <form id="checkout">
+    <div class="columns">
+      <section class="box"><h2>Kund</h2><label>Namn<input name="name" required></label><label>E-post<input name="email" type="email" required></label><label><input name="company" type="checkbox"> Företag</label><label>Organisationsnummer<input name="org"></label></section>
+      <section class="box"><h2>Leverans</h2><label><input name="shipping" type="radio" value="standard" checked> Standard, 49 kr</label><label><input name="shipping" type="radio" value="express"> Express, 129 kr</label><h2>Betalning</h2><label>Metod<select name="payment"><option value="card">Kort</option><option value="invoice">Faktura</option></select></label><label>Kortnummer<input name="card" inputmode="numeric"></label></section>
+    </div>
+    <p class="error" id="error"></p>
+    <div class="actions"><a href="#">Tillbaka</a><button class="pay" type="submit">Betala nu</button></div>
+  </form>
+</main>
+<script>
+document.querySelector('#checkout').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.currentTarget);const company=data.get('company');const payment=data.get('payment');const card=data.get('card');const org=data.get('org');const error=document.querySelector('#error');if(company&&!org){error.textContent='Något blev fel';return}if(payment==='card'&&!card){error.textContent='Något blev fel';return}error.textContent='Klart!';});
+</script>
+</body>
+</html>

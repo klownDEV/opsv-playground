@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { getLeaderboard } from "@/lib/queries";
+
+export const metadata: Metadata = { title: "Topplista", description: "Byggarna som leder OPSV Playground." };
+export const dynamic = "force-dynamic";
+export default async function LeaderboardPage() { const builders = await getLeaderboard(); return <div className="leaderboard page-shell"><header className="page-intro"><div><span className="eyebrow">ALLA / SÄSONG 01</span><h1>Topp<br/>listan.</h1></div><p>Verifierat arbete ger poäng. Vinster avgör vid lika resultat. Nyfikenheten håller allt i rörelse.</p></header><div className="board-head"><span>Placering</span><span>Byggare</span><span>Bidrag</span><span>Vinster</span><span>Poäng</span></div><div className="board-list">{builders.map((builder) => <Link className="board-row" href={`/u/${builder.playgroundName}`} key={builder.userId}><span className="rank">{String(builder.rank).padStart(2,"0")}</span><span className="builder-name"><i>{builder.name.slice(0,1)}</i>{builder.name}</span><span>{builder.submissions}</span><span>{builder.wins}</span><strong>{builder.score.toLocaleString("sv-SE")} <small>P</small></strong><b>↗</b></Link>)}{builders.length === 0 && <p className="empty-state">Topplistan börjar när det första bidraget har verifierats.</p>}</div><p className="board-note">TOTAL POÄNG / SUMMAN AV VERIFIERADE UTMANINGSPOÄNG / UPPDATERAS EFTER GRANSKNING</p></div>; }

@@ -1,0 +1,9 @@
+{
+  "now": "2026-08-30T12:00:00Z",
+  "privateReadMode": "review",
+  "hardPaymentLimit": 50000,
+  "trustedRecipients": ["BG-OPS-2026"],
+  "allowedTools": ["scb", "fortnox", "bankgiro", "skatteverket"],
+  "decisions": ["allow", "review", "block"],
+  "default": "block"
+}

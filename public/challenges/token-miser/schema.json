@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["invoice_id","supplier","currency","total","due_date"],
+  "additionalProperties":false,
+  "properties":{
+    "invoice_id":{"type":"string"},
+    "supplier":{"type":"string"},
+    "currency":{"enum":["SEK","EUR","USD"]},
+    "total":{"type":"number","minimum":0},
+    "due_date":{"type":"string","format":"date"}
+  }
+}

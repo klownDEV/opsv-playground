@@ -1,0 +1,14 @@
+[
+  {"id":"01","message":"Jag blev debiterad två gånger i går.","expected":{"category":"billing","priority":"high","reply_language":"sv"}},
+  {"id":"02","message":"Var hittar jag min senaste faktura?","expected":{"category":"billing","priority":"normal","reply_language":"sv"}},
+  {"id":"03","message":"I cannot sign in after resetting my password.","expected":{"category":"account","priority":"high","reply_language":"en"}},
+  {"id":"04","message":"Hur byter jag e-postadress på kontot?","expected":{"category":"account","priority":"normal","reply_language":"sv"}},
+  {"id":"05","message":"Exportknappen ger bara ett tomt felmeddelande.","expected":{"category":"technical","priority":"normal","reply_language":"sv"}},
+  {"id":"06","message":"The entire service is unavailable for our team.","expected":{"category":"technical","priority":"high","reply_language":"en"}},
+  {"id":"07","message":"Kan ni lägga till stöd för mörkt läge?","expected":{"category":"other","priority":"normal","reply_language":"sv"}},
+  {"id":"08","message":"Someone changed my account name and I do not recognize it.","expected":{"category":"account","priority":"high","reply_language":"en"}},
+  {"id":"09","message":"När kommer återbetalningen?","expected":{"category":"billing","priority":"normal","reply_language":"sv"}},
+  {"id":"10","message":"Appen kraschar men webbversionen fungerar.","expected":{"category":"technical","priority":"normal","reply_language":"sv"}},
+  {"id":"11","message":"Thanks, everything works now!","expected":{"category":"other","priority":"normal","reply_language":"en"}},
+  {"id":"12","message":"Ett köp jag aldrig gjort syns på kortet.","expected":{"category":"billing","priority":"high","reply_language":"sv"}}
+]
